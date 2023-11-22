@@ -12,21 +12,24 @@
 </head>
 <body>
 
-   <h1>Sales Manager</h1>
-
-    <div class="column">
-        <h2>Leads</h2>
-        {% for lead in leads %}
-        {% endfor %}
+  <div class="user_menu">
+    <div class="has-text-right pt-4"><i class="icon ion-md-arrow-back is-size-3 _bzlufv"></i></div>
+    <div class="_89oezg"></div>
+    <div class="dropdown">
+        <div onclick="toggleUserMenu()">
+            <i class="icon ion-md-contact is-size-1"></i>
+            <div>
+                <p class="pointer">Land1sh </p>
+                <i class="icon ion-md-arrow-dropdown"></i>
+            </div>
+        </div>
+        <div class="dropdown-content" id="userMenu">
+            <a class="dropdown-item pointer"><i class="icon ion-md-settings"></i>Настройки</a>
+            <a class="dropdown-item pointer"><i class="icon ion-md-exit"></i>Выйти</a>
+        </div>
     </div>
+  </div>
 
-    <div class="column" id="office-visited-column" ondragover="allowDrop(event)" ondrop="drop(event)">
-        <h2>Office Visited</h2>
-    </div>
-
-    <div class="column" id="contract-signed-column" ondragover="allowDrop(event)" ondrop="drop(event)">
-        <h2>Contract Signed</h2>
-    </div>
     <div class="column" id="leads-column">
     <h2>Leads <span class="add-button" onclick="showModal('addLeadModal')">+</span></h2>
     {% for lead in leads %}
