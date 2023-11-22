@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'bulma.css' %}">
+    <link rel="stylesheet" href="{% static 'bulma.min.css' %}">
+    <script src={% static 'js/index.js' %}></script>
+    <title>Title</title>
+</head>
+<body>
+
+   <h1>Sales Manager</h1>
+
+    <div class="column">
+        <h2>Leads</h2>
+        {% for lead in leads %}
+        {% endfor %}
+    </div>
+
+    <div class="column" id="office-visited-column" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h2>Office Visited</h2>
+    </div>
+
+    <div class="column" id="contract-signed-column" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h2>Contract Signed</h2>
+    </div>
+    <div class="column" id="leads-column">
+    <h2>Leads <span class="add-button" onclick="showModal('addLeadModal')">+</span></h2>
+    {% for lead in leads %}
+        <div class="lead-block" draggable="true" ondragstart="drag(event)">
+            <p>{{ lead.name }}</p>
+            <p>Phone: {{ lead.phone_number }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="column" id="office-visited-column" ondragover="allowDrop(event)" ondrop="drop(event)">
+    <h2>Office Visited <span class="add-button" onclick="showModal('addOfficeVisitedModal')">+</span></h2>
+</div>
+
+<div class="column" id="contract-signed-column" ondragover="allowDrop(event)" ondrop="drop(event)">
+    <h2>Contract Signed <span class="add-button" onclick="showModal('addContractSignedModal')">+</span></h2>
+</div>
+
+<div id="addLeadModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('addLeadModal')">&times;</span>
+        <h2>Add Lead</h2>
+        <!-- Форма для добавления клиента -->
+    </div>
+</div>
+
+<div id="addOfficeVisitedModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('addOfficeVisitedModal')">&times;</span>
+        <h2>Add Office Visited</h2>
+        <!-- Форма для добавления посещения офиса -->
+    </div>
+</div>
+
+<div id="addContractSignedModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('addContractSignedModal')">&times;</span>
+        <h2>Add Contract Signed</h2>
+        <!-- Форма для добавления подписанного договора -->
+    </div>
+</div>
+
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            let data = event.dataTransfer.getData("text");
+            event.target.appendChild(document.getElementById(data));
+        }
+    </script>
+  <script>
+    function toggleUserMenu() {
+      let userMenu = document.getElementById("userMenu");
+      userMenu.style.display = (userMenu.style.display === "block") ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>l

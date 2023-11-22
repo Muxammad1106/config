@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'bulma.css' %}">
+    <link rel="stylesheet" href="{% static 'bulma.min.css' %}">
+
+    <title>Add Lead</title>
+
+    <style>
+        body {
+            background-color: white;
+            color: rgb(31, 38, 104);
+        }
+        form {
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        textarea {
+            width: 300px;
+            padding: 5px;
+        }
+        input[type="checkbox"] {
+            margin-top: 5px;
+        }
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: rgb(31, 38, 104);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Lead</h1>
+
+    <form method="POST" action="{% url 'add_lead' %}">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="office_visited">Office Visited:</label>
+       ```html
+        <input type="checkbox" id="office_visited" name="office_visited">
+
+        <label for="contract_signed">Contract Signed:</label>
+        <input type="checkbox" id="contract_signed" name="contract_signed">
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+
+        <label for="sales_channel">Sales Channel:</label>
+        <input type="text" id="sales_channel" name="sales_channel" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <input type="submit" value="Add Lead">
+    </form>
+</body>
+</html>
