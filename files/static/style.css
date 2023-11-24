@@ -42,48 +42,48 @@
 }
 
 .dropdown-content a:hover {
-   background-color: rgb(31, 38, 104) ;
+    background-color: rgb(31, 38, 104);
 }
 
-   body {
-            background-color: white;
-            color: rgb(31, 38, 104);
-        }
-        form {
-            margin: 20px;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input[type="text"],
-        textarea {
-            width: 300px;
-            padding: 5px;
-        }
-        input[type="checkbox"] {
-            margin-top: 5px;
-        }
-        input[type="submit"] {
-            margin-top: 10px;
-            padding: 5px 10px;
-            background-color: rgb(31, 38, 104);
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+body {
+    background-color: white;
+    color: rgb(31, 38, 104);
+}
 
-           .column {
-            float: right;
-            width: 30%;
-            margin: 10px;
-            padding: 10px;
-            background-color: rgb(31, 38, 104);
-            color: white;
-        }
+form {
+    margin: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+textarea {
+    width: 300px;
+    padding: 5px;
+}
+
+input[type="checkbox"] {
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: rgb(31, 38, 104);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.column {
+
+}
 
 
-           .add-button {
+.add-button {
     cursor: pointer;
     margin-left: 5px;
 }
@@ -122,10 +122,11 @@
     text-decoration: none;
     cursor: pointer;
 }
-            /*crm*/
+
+/*crm*/
 
 
-            .container-slide {
+.container-slide {
     max-width: 100% !important;
     height: 50vh;
     overflow: hidden;
